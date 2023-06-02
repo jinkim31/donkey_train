@@ -66,8 +66,13 @@ x = Dropout(drop)(x)
 x = Convolution2D(128, (3,3), strides=(1,1), activation='relu', name="conv2d_5")(x)
 x = Dropout(drop)(x)
 x = Flatten(name='flattened')(x)
-x = Dense(100, activation='relu')(x)
+x = Dense(512, activation='relu')(x)
+x = Dropout(drop)(x)
+x = Dense(128, activation='relu')(x)
 x = Dropout(drop)(x)
 x = Dense(50, activation='relu')(x)
 x = Dropout(drop)(x)
 ```
+ loss: 0.0552 - n_outputs0_loss: 0.0498 - n_outputs1_loss: 0.0054 - val_loss: 0.1350 - val_n_outputs0_loss: 0.1303 - val_n_outputs1_loss: 0.0047
+
+![conv128ch.h5_loss_acc_0.129481.png](conv128ch.h5_loss_acc_0.129481.png)

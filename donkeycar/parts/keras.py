@@ -160,10 +160,11 @@ class KerasLinear(KerasPilot):
         x = Dropout(drop)(x)
         x = Convolution2D(64, (5,5), strides=(2,2), activation='relu', name="conv2d_3")(x)
         x = Dropout(drop)(x)
-        x = Convolution2D(128, (3,3), strides=(1,1), activation='relu', name="conv2d_4")(x)
+        x = Convolution2D(64, (3,3), strides=(1,1), activation='relu', name="conv2d_4")(x)
         x = Dropout(drop)(x)
-        x = Convolution2D(128, (3,3), strides=(1,1), activation='relu', name="conv2d_5")(x)
+        x = Convolution2D(64, (3,3), strides=(1,1), activation='relu', name="conv2d_5")(x)
         x = Dropout(drop)(x)
+        
         x = Flatten(name='flattened')(x)
         x = Dense(100, activation='relu')(x)
         x = Dropout(drop)(x)
